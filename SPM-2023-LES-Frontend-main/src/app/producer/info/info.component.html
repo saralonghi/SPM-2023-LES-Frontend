@@ -1,0 +1,175 @@
+
+
+  <!--- BOTTONE PER MODIFICARE O SALVARE --->
+  <div *ngIf="!displayForm; then Modifica else Indietro"></div>
+  <!--Bottone Modifica-->
+  <ng-template #Modifica>
+    <button  class="btn btn-Indietro-Modifica " (click)="modify()" style="color: whitesmoke; height: 40px; width: 120px">
+      <span style="object-fit: scale-down;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16" style="color: whitesmoke">
+        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
+        </svg>
+      </span> Modifica
+    </button>
+  </ng-template>
+  <!--Bottone Indietro-->
+  <ng-template #Indietro>
+    <button  class=" btn btn-Indietro-Modifica" (click)="modify()" style="color: whitesmoke; height: 40px; width: 120px; ">
+      <span style="object-fit: scale-down;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+        </svg>
+      </span> Indietro
+    </button>
+  </ng-template>
+
+  <div class="container">
+    <div class="row">
+      <!--- CONTENUTO --->
+      <div *ngIf="displayForm; then thenBlock else elseBlock"></div>
+
+      <!---FORM TO FILL--->
+      <ng-template #thenBlock>
+        <form #el ="ngForm" (ngSubmit)="save()" class="row g-3" style="padding-top:0px" >
+          <!--<div class="col-12">
+            <label for="inputNomeAzienda" class="form-label">Azienda</label>
+            <input type="text" class="form-control" id="inputNomeAzienda" placeholder="{{producer.nome}}">
+          </div>-->
+          <div class="col-md-6 col-sm-12">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="{{producer.email}}"
+                   name="inputEmail" value="{{producer.email}}" [(ngModel)]="updateProducer.email">
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <label for="inputPhone" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="inputPhone" placeholder="{{producer.phone}}"
+                   name="inputPhone" value="{{producer.phone}}" [(ngModel)]="updateProducer.phone">
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 ">
+            <label for="inputIndirizzo" class="form-label">Indirizzo</label>
+            <input type="text" class="form-control" id="inputIndirizzo" placeholder="{{producer.address}}"
+                   name="inputIndirizzo" value="{{producer.address}}" [(ngModel)]="updateProducer.address">
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 ">
+            <label for="inputCity" class="form-label">Città</label>
+            <input type="text" class="form-control" id="inputCity" placeholder="{{producer.city}}"
+                   name="inputCity" value="{{producer.city}}" [(ngModel)]="updateProducer.city">
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 ">
+            <label for="inputCD" class="form-label" style="width: 110px">Codice Postale</label>
+            <input type="text" class="form-control" id="inputCD" placeholder="{{producer.postalCode}}"
+                   name="inputCD" value="{{producer.postalCode}}" [(ngModel)]="updateProducer.postalCode">
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 ">
+            <label for="inputProvincia" class="form-label">Provincia</label>
+            <select id="inputProvincia" class="form-select" name="inputProvincia"
+                    value="{{producer.province}}" [(ngModel)]="updateProducer.province">
+              <option selected>Ancona</option>
+              <option>Ascoli</option>
+              <option>Macerata</option>
+              <option>Fermo</option>
+              <option>Urbino</option> </select>
+          </div>
+
+          <div class="col-12">
+            <label for="inputProdotti" class="form-label">Prodotti</label>
+            <input type="text" class="form-control" id="inputProdotti" placeholder="{{producer.products}}"
+                   name="inputProdotti" value="{{producer.products}}" [(ngModel)]="updateProducer.products">
+          </div>
+          <div class="col-12">
+            <label for="inputDescrizione" class="form-label">Descrizione</label>
+            <input type="text" class="form-control" id="inputDescrizione" placeholder="{{producer.description}}"
+                   name="inputDescrizione" value="{{producer.description}} " [(ngModel)]="updateProducer.description">
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <label for="inputLinkFB" class="form-label">Facebook</label>
+            <input  type="text" class="form-control" id="inputLinkFB" placeholder="{{producer.linkFacebook}}"
+                   name="inputLinkFB" value="{{producer.linkFacebook}}" [(ngModel)]="updateProducer.linkFacebook">
+          </div>
+          <div class="col-md-4 col-sm-12">
+          <label for="inputLinkIG" class="form-label">Instagram</label>
+          <input type="text" class="form-control" id="inputLinkIG" placeholder="{{producer.linkInstagram}}"
+                 name="inputLinkIG" value="{{producer.linkInstagram}}" [(ngModel)]="updateProducer.linkInstagram">
+        </div>
+          <div class="col-md-4 col-sm-12">
+          <label for="inputLinkWS" class="form-label">Website</label>
+          <input type="text" class="form-control" id="inputLinkWS" placeholder="{{producer.linkWebsite}}"
+                 name="inputLinkWS" value="{{producer.linkWebsite}}" [(ngModel)]="updateProducer.linkWebsite">
+        </div>
+          <div class="col-md-6 col-sm-12" >
+            <label for="formFile" class="form-label">Logo</label>
+            <label for="formFile" class="form-label"></label>
+            <input id ="formFile" (change)="onShowPreview($event)" class="form-control form-file-button-hover-bg" multiple type="file" accept="image/png">
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <img [src]="previewURL" *ngIf="previewURL" style="border-radius: 5%; height:100px; width: auto;  ">
+          </div>
+          <div class="col-md-4 col-sm-6 ">
+          <button type="submit" class="btn btn-Applica">Applica</button>
+          </div>
+          </form>
+      </ng-template>
+
+      <!---LABEL OF INFO OF THE PRODUCER--->
+      <ng-template #elseBlock>
+        <dl class="row">
+          <div class="col-md-4 col-sm-12 label4" >
+            <div class="card-body">
+              <img [src]="base64Image" alt="logo"  >
+            </div>
+          </div>
+          <dd class="col-md-8 col-sm-12 label8"> </dd>
+          <ng-container *ngIf="producer.nome!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Nome: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.nome }} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.email!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Email: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.email }} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.phone!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Telefono: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.phone}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.address!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Indirizzo: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.address}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.city!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Città: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.city }} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.province!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Provincia: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.province}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.postalCode!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Codice Postale: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.postalCode}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.products!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Prodotti: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.products}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.description!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Descrizione: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.description}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.linkFacebook!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Facebook: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.linkFacebook}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.linkInstagram!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Instagram: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.linkInstagram}} </dd>
+          </ng-container>
+          <br>
+          <ng-container *ngIf="producer.linkWebsite!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Sito web: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.linkWebsite}} </dd>
+          </ng-container>
+        </dl>
+      </ng-template>
+
+    </div>
+  </div>

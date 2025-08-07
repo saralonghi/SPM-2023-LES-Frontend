@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="content">
+<div class="container">
+  <strong style="font-size: large">{{news.titolo}}</strong>
+  <br> <br>
+  <div class="containerImage">
+    <div *ngFor="let photo of listImage; let i = index">
+     <img [src]="photo.url">
+    </div>
+  </div> <!---Container Image-->
+  <p>{{news.contenuto}}</p>
+</div> <!-----------Container-->
+</div> <!-------------Content-->

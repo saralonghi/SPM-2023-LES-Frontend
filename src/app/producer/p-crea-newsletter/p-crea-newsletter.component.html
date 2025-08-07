@@ -1,0 +1,39 @@
+
+<h4 class="fs-2"> Crea la tua NEWSLETTER </h4>
+<div class="container">
+
+
+  <!----------------------------------Card-------------------------------->
+
+  <h6><strong> Guarda l'anteprima </strong></h6>
+  <div class="card" style="background-color: #d3e1d3; padding: 20px">
+    <div *ngIf="!imgURL; then defaultImg else newImg"></div>
+    <ng-template #defaultImg> <img class="card-img-top" src="/assets/img/No-Image-Placeholder.svg.png" > </ng-template>
+    <ng-template #newImg> <img class="card-img-top"  [src]="imgURL"></ng-template>
+    <div class="card-body">
+       <p class="card-text" style=" height:220px;"> <strong> {{titolo}} </strong> <br> {{testo}}</p>
+    </div>
+  </div>
+    <!--------------------------------------Form------------------------------------------->
+    <form id="newsL-form" style="margin-top: 40px">
+
+       <label style="color:black"> <strong>Titolo Newsletter</strong></label>
+        <input type="text" (keyup)="onKeyTitolo($event)" class="form-control" placeholder="Titolo Newsletter">
+      <br>
+        <label style="color:black"> <strong>Contenuto Newsletter</strong></label>
+        <textarea (keyup)="onKeyTesto($event)" class="form-control" style="min-height: 200px" placeholder="Inserisci qui il contenuto per la Newsletter"></textarea>
+      <br>
+        <label for="formFileLg" style="color:black;"><strong> Inserisci l'immagine per la tua Newsletter </strong></label>
+        <input id="formFileLg" (change)="onFileChanged($event)" class="form-control img-form" type="file">
+      <br>
+      </form>
+
+
+<button   type="submit" (click)="save()" class="btn "><strong>Crea</strong></button>
+</div><!--container--->
+
+
+<div *ngIf="showAlert" [ngClass]="{'alert-success': isSuccess, 'alert-danger': !isSuccess}" class="alert">
+  {{ alertMessage }}
+</div>
+<router-outlet></router-outlet>

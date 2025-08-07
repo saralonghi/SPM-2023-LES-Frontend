@@ -1,0 +1,114 @@
+/*body {
+  background-image: url("/assets/img/COLORI PNM .png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: 180px;
+  background-position-y: -100px;
+  overflow-y: auto;
+}*/
+
+.content{
+  position: fixed;
+  padding-top: 100px;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*SideNav-------------------------------------------------*/
+#side_nav{
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  padding-top: 65px;
+  background: #edad0c;
+  transition: all 0.3s;
+  z-index: 6;
+}
+
+#side_nav2{
+  position: fixed;
+  width: 80px;
+  height: 100vh;
+  padding-top: 65px;
+  background: #edad0c;
+  transition: all 0.3s;
+  z-index: 8;
+}
+/*------------------grande-------------------*/
+@media only screen and (min-width: 700px){
+  #side_nav2{
+    display: none;
+  }
+  .content{
+    padding-left: 280px;
+  }
+
+}
+
+/*----------------Piccolo---------------------*/
+@media only screen and (max-width: 700px) {
+  #side_nav {
+    display: none;
+  }
+  .content{
+    padding-left: 90px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  #side_nav {
+    display: none;
+  }
+  #side_nav2 {
+  padding-top: 120px;
+  }
+  .content{
+    padding-top: 150px;
+    padding-left: 90px;
+  }
+
+
+}
+
+
+hr.h-color{
+  background: #eeee;
+}
+.sidebar li.active{
+  background: #eeee;
+  border-radius: 8px;
+}
+.sidebar li.active a, .sidebar li.active a:hover {
+  color: #000000;
+}
+.sidebar li a{
+  color: #eeee;
+}
+.sidebar li:hover{
+  background-color: white;
+}
+
+
+
+
+
+
+
+/*
+.col-2{
+  margin-top: 30px;
+  background-color: transparent;
+}
+
+
+
+.list-group-item {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+
+
+
+*/

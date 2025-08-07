@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="content">
+
+  <div class="testo">
+    <p class="typed-out"> Scopri i sapori autentici delle Marche .</p> <p class="cursore">|</p>
+  </div>
+
+  <div class="content-video">
+    <video autoplay muted loop poster="assets/img/HomeImg.png" class="video">
+      <source src="assets/img/Home.mp4" type="video/mp4">
+    </video>
+  </div>
+    <div class=" d-grid iscrizione">
+      <h2 class="newsletter-text">Registrati alla nostra newsletter!</h2>
+
+      <form class="d-flex newsletter-form" (ngSubmit)="onSubmit()" [formGroup]="myForm">
+        <input type="email" name="email" id="email" formControlName="email" placeholder="Inserisci la tua email">
+        <button type="submit" class="btn btn-primary" >Iscriviti</button>
+      </form>
+    </div>
+
+
+
+   <!-- <div class="video-container">
+    <video autoplay muted loop poster="assets/img/HomeImg.png" class="video">
+      <div class="video-overlay"></div>
+      <source src="assets/img/Home.mp4" type="video/mp4">
+    </video>
+  -->
+</div>
+<app-footer id="footer"></app-footer>
+
+
+    <div *ngIf="showAlert" class="custom-alert" [ngClass]="{'success-alert': isSuccess, 'error-alert': !isSuccess}">
+      <span class="alert-message">{{ alertMessage }}</span>
+      <button (click)="hideAlert()" class="close-btn">Close</button>
+    </div>
+
+
+

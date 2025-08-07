@@ -1,0 +1,141 @@
+/*Titolo--------------------------------*/
+
+.fs-4{
+  margin-left: 10px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color : black;
+}
+
+
+/*Container-------------------------------*/
+.container{
+  height: 80vh;
+  padding-bottom: 100px;
+  overflow-y: auto;
+  padding-right: 50px;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/*Card----------------------------------------------*/
+.card{
+  border: none;
+  min-width: 300px;
+}
+
+.card-img-top{
+  width: 200px;
+  height: 250px;
+  border: none;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.card-body{
+  overflow-y: hidden;
+  background-color: #edf1ec;
+  margin-left: 210px;
+  margin-top: -250px;
+  height: 250px;
+  border: none;
+  border-radius: 6px;
+}
+
+
+.card-text{
+  overflow-y: auto;
+  height: 400px;
+}
+
+/*Hide scroolbar from Card*/
+.card-text::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.card-text{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+/*Form---------------------------------------*/
+.form-control {
+  outline: none;
+  background-color: whitesmoke;
+  transition: width 0.3s;
+  box-sizing: border-box;
+  border: none;
+}
+
+.form-control:focus{
+  border-width: 1px;
+  box-shadow: 0 0 0 0.25rem rgba(146, 182, 171, 0.45);
+  border-color: darkseagreen;
+}
+
+.img-form{
+  --bs-border-width: 1px;
+  border-width: 1px;
+  border-color: rgb(236, 237, 238);
+}
+
+/*Hide scroolbar Form*/
+.form-control::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.form-control {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+/*Bottone-----------------------------------------*/
+.btn{
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  transition: 0.5s;
+  background-color: darkseagreen;
+  color: whitesmoke;
+  margin-top: 20px;
+  width: 100px;
+}
+
+.btn:hover {
+  background-color: #6aa96a;
+}
+
+/*Alert--------------------------------------------*/
+.alert {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}

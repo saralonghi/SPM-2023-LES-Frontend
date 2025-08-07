@@ -1,0 +1,85 @@
+/*Layout-----------------------------------------*/
+.container{
+  margin-top: 50px;
+  height: 80vh;
+  overflow-x: hidden;
+/*  overflow-y: scroll;*/
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .container .btn-Indietro-Modifica{
+      margin-left: 0px;
+      margin-top: 40px;
+    }
+    .container .row{
+      margin-top: 40px;
+      object-fit: scale-down;
+    }
+  }
+
+.row {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 0px;
+  padding-bottom: 50px;
+}
+
+.label8 , .label4{
+  padding: 10px;
+}
+
+/*Bottoni----------------------------------------*/
+.btn{
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  transition: 0.5s;
+  background-color: darkseagreen;
+  color: whitesmoke;
+}
+.btn:hover {
+  background-color: #6aa96a;
+}
+
+.btn-Indietro-Modifica{
+  position: fixed;
+  margin-left: 40px;
+  margin-right: 20px;
+  margin-bottom: -160px;
+}
+
+/*Logo------------------------------------------*/
+img{
+  width: 100px;
+  border: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+/*Form-------------------------------------------*/
+.form-control{
+  border-width: 1px;
+  outline: none;
+  background-color: whitesmoke;
+  --bs-border-width: 1px;
+}
+.form-control:focus{
+  box-shadow: 0 0 0 0.25rem rgba(146, 182, 171, 0.45);
+  border-color: darkseagreen;
+}
+
+
+
+

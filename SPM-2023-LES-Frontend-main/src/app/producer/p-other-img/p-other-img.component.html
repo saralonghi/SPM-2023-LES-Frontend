@@ -1,0 +1,107 @@
+ <h4 class="fs-2"> Le tue immagini </h4>
+
+      <form class="container">
+      <!---<div class="row">
+        <div class = "col-md-4 col-sm-6" >
+          <label style="color:black; padding-bottom: 5px"> <strong>Inserisci un'immagine</strong></label>
+          <input (change)="onFileChanged($event)" class="form-control form-file-button-hover-bg" multiple type="file">
+        </div>
+
+        <div class = "col-2 " >
+          <button *ngIf="buttonCrea==true" type="submit" (click)="onUploadOther()" class="btn btn-style">Crea</button>
+          <button *ngIf="buttonCrea==false && arrayStoredImg.length!=0"(click)="deleteAll()" class="btn btn-style">DeleteAll</button>
+        </div>
+
+        <div class = "col-md-4 col-sm-6" >
+          <label style="color:black; padding-bottom: 5px"> <strong>Inserisci una copertina </strong></label>
+          <input id="cover" class="form-control form-file-button-hover-bg" type="file">
+        </div>
+
+        <div class = "col-2" >
+          <button for="cover" (click)="onUploadCover()" class="btn btn-style"> Crea </button>
+        </div>
+
+      </div>--->
+
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-img-tab" data-bs-toggle="tab" data-bs-target="#nav-img" type="button" role="tab" aria-controls="nav-img" aria-selected="true">Immagini</button>
+            <button class="nav-link" id="nav-cover-tab" data-bs-toggle="tab" data-bs-target="#nav-cover" type="button" role="tab" aria-controls="nav-cover" aria-selected="false">Immagine di copertina</button>
+          </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-img" role="tabpanel" aria-labelledby="nav-img-tab" tabindex="0">
+            <br>
+            <div class = "slider-wrapper"> <!--Slider Wrapper Image List--->
+              <div class = "image-list" [style.grid-template-columns.] = " 'repeat(' + arrayStoredImg.length + ',1fr)' ">
+
+                <div *ngIf="arrayStoredImg.length == 0; then defaultImg else newImg"></div>
+                <ng-template #defaultImg> <img class="image-item" src="/assets/img/No-Image-Placeholder.svg.png" > </ng-template>
+
+                <ng-template #newImg >
+                  <div class="img-container" *ngFor="let urlImg of arrayStoredImg" >
+                    <img class="image-item"[src]="urlImg" >
+                    <div class="trash-container">
+                      <button class="btn trash" (click)="onDelete(urlImg)">
+                        <svg class="bi bi-trash" width="16" height="16" xmlns="http://www.w3.org/2000/svg"
+                             fill="currentColor"  viewBox="0 0 16 16">
+                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                          <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                        </svg>
+                      </button></div>
+                  </div>
+                </ng-template>
+
+              </div>
+            </div> <!--Slider Wrapper Image List--->
+
+            <div class = "row" style="margin-top: 10px; margin-left: 10px; ">
+              <div class = "col-md-6 col-sm-8"  style="margin-top: 10px" >
+                <label style="color:black"> <strong>Inserisci un'immagine</strong></label>
+                <input (change)="onFileChangedOther($event)" class="form-control form-file-button-hover-bg" multiple type="file">
+              </div> <!--Col input form img -->
+
+              <div class = "col-2 " >
+                <button *ngIf="buttonCrea==true" type="submit" (click)="onUploadOther()" class="btn btn-style">Crea</button>
+                <button *ngIf="buttonCrea==false && arrayStoredImg.length!=0"(click)="deleteAll()" class="btn btn-style">DeleteAll</button>
+              </div> <!--Col buttons-->
+            </div> <!--Row-->
+          </div> <!--Other img-->
+
+
+          <div class="tab-pane fade" id="nav-cover" role="tabpanel" aria-labelledby="nav-cover-tab" tabindex="0">
+
+            <div *ngIf="storedCover!= null; then newCover else defaultCover "></div>
+            <ng-template #defaultCover>
+              <img style= "margin-top:20px;margin-left:30px; width:280px; height:320px;" src = "/assets/img/No-Image-Placeholder.svg.png">
+            </ng-template>
+
+            <ng-template #newCover>
+              <img class="img-cover" [src] = storedCover>
+              <div class="trash-container" style="margin-left: 33px">
+                <button class="btn trash" (click)="onDeleteCover()">
+                  <svg class="bi bi-trash" width="16" height="16" xmlns="http://www.w3.org/2000/svg"
+                       fill="currentColor"  viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                  </svg>
+                </button></div>
+
+            </ng-template>
+
+            <div class = "row" style="margin-top: 10px; margin-left: 10px">
+              <div class = "col-md-6 col-sm-8" style="margin-top: 10px" >
+                <label style="color:black;"> <strong>Inserisci una copertina </strong></label>
+                <input (change)="onFileChangedCover($event)"id="cover" class="form-control form-file-button-hover-bg" type="file">
+              </div>
+
+              <div class = "col-2" >
+                <button for="cover" (click)="onUploadCover()" class="btn btn-style"> Crea </button>
+              </div>
+            </div> <!--Row-->
+          </div> <!--Cover-->
+        </div> <!--My tab--->
+
+
+      </form>

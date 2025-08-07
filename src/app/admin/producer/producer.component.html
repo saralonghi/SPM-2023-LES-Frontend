@@ -1,0 +1,21 @@
+
+<h2 class="fs-4"> Produttori da accettare</h2>
+<div class="container">
+  <div *ngFor="let producer of listProducer | paginate : {itemsPerPage: 6 , currentPage: this.p} "  class="list-group">
+  <ul routerLink= "/dashboardAdmin/producer/{{producer.id}}" class="list-group-item list-group-item-action flex-column align-items-start ">
+    <li class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{producer.nome}}</h5>
+      <small>{{producer.created!.toString().substring(3, 15)}}</small>
+    </li>
+    <p class="limited-text mb-1">{{producer.province}}</p>
+  </ul>
+</div>
+  <ng-container *ngIf="listProducer.length>6">
+    <div class="pagination-container">
+      <pagination-controls class="pagination" (pageChange)= " p=$event "> </pagination-controls>
+    </div>
+  </ng-container>
+
+</div>
+
+<router-outlet></router-outlet>

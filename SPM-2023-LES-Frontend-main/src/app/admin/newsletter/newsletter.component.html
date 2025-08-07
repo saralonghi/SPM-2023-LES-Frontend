@@ -1,0 +1,28 @@
+<h2 class="fs-4"> Newsletter da accettare</h2>
+<div class="container">
+<div *ngFor="let item of listNewsletter  | paginate : {itemsPerPage: 6 , currentPage: this.p}; index as i "  class="list-group">
+
+  <ul routerLink="/dashboardAdmin/newsletter/{{item.id}}"  class="list-group-item align-items-start">
+      <li class=" d-flex flex-row">
+
+        <div class ="p-2 flex-grow-1 bd-highlight">
+          <h5 class="limited-text">{{item.titolo}}</h5>
+        </div>
+        <div style="display: flex; align-items: center">
+          <small>{{item.created!.toString().substring(3, 15)}}</small>
+        </div>
+      </li>
+  </ul>
+</div>
+  <ng-container *ngIf="listNewsletter.length>6">
+    <div class="pagination-container">
+      <pagination-controls class="pagination" (pageChange)= " p=$event "> </pagination-controls>
+    </div>
+  </ng-container>
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+

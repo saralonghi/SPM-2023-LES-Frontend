@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="section-container" >
+    <div class="row">
+
+
+      <div class="col-12">
+        <h2>{{newsletter.titolo}}</h2>
+      </div>
+    </div>
+    <br>
+
+
+    <div  *ngIf="newsletter.image!=null; then Img"></div>
+    <ng-template #Img>
+      <div class= "containerImage-Big">
+        <img style="object-fit: cover" [src]=urlImage>
+      </div>
+
+      <div class= "containerImage-Small">
+        <img style="object-fit: cover" [src]=urlImage>
+      </div>
+    </ng-template>
+
+
+    <p class="font-serif">{{newsletter.contenuto}}</p>
+    </div>
+  </div>
+

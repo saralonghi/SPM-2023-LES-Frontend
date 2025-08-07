@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="section-container">
+    <div class="row">
+      <div class="col-12">
+        <h5 style="text-align:right;">{{this.producer.nome}} </h5>
+      </div>
+      <div class="col-12">
+        <h2 id="titleEx3">{{newsletter.titolo}}</h2>
+      </div>
+    </div>
+    <br>
+
+
+    <div  *ngIf="newsletter.image!=null; then Img"></div>
+        <ng-template #Img>
+          <div class= "containerImage-Big">
+            <img style="object-fit: cover" [src]=urlImage>
+          </div>
+
+          <div class= "containerImage-Small">
+            <img style="object-fit: cover" [src]=urlImage>
+          </div>
+        </ng-template>
+
+
+    <p class="font-serif">{{newsletter.contenuto}}</p>
+
+    <div class="d-grid gap-2 d-md-block ">
+      <button (click)="onAccetta(newsletter.id)" class="btnAccetta btn" type="button"> <strong>Accetta</strong> </button>
+      <button (click)="onRifiuta(newsletter.id)" class="btnRifiuta btn" type="button"> <strong>Rifiuta</strong></button>
+    </div>
+
+</div> <!--Section-container-->
+</div> <!--Container-->

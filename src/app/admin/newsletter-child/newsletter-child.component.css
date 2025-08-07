@@ -1,0 +1,86 @@
+/* Responsive-----------------------------------*/
+
+/*Schermo Piccolo*/
+@media only screen and (max-width: 850px){
+   .containerImage-Big{
+    display: none;
+  }
+
+  .containerImage-Small{
+  overflow-y: hidden;
+  }
+
+  img{
+    width: 320px;
+    height:250px;
+    object-fit:scale-down;
+  }
+
+}
+/*Schermo Grande*/
+@media only screen and (min-width: 850px){
+  .containerImage-Small{
+    display: none;
+  }
+  img{
+    width:300px;
+    height:350px;
+    object-fit: cover;
+  }
+}
+
+/*Container----------------------------------*/
+.container{
+  height: 80vh;
+  padding-right:40px ;
+  overflow-y: auto;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/*Section--------------------------------------*/
+.section-container{
+  min-width: 350px;
+  overflow-x: hidden;
+  padding: 40px;
+  background-color: rgba(212, 225, 184, 0.62);
+}
+
+/*Immagini---------------------------------------*/
+
+.containerImage-Big{
+  float: left; /* Posiziona l'immagine a sinistra */
+  margin: 20px 30px 0px 0px;
+}
+
+/*Button----------------------------------------*/
+.btn{
+  border: none;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.3s;
+  margin: 10px;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
+.btnAccetta{
+  background-color: #9cc79c;
+}
+
+.btnRifiuta{
+  background-color: #d97a88;
+}
+
+

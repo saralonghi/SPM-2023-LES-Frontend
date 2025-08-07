@@ -1,0 +1,58 @@
+
+.fs-2{
+  margin-bottom: 50px;
+  font-weight: bold;
+  color : white;
+}
+
+
+.fs-4{
+  margin-top: -20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color : white;
+}
+
+
+
+
+.form{
+  max-width: 500px;
+  margin-top: 10px;
+}
+
+.btn{
+  border: none;
+  text-align: center;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.btn:hover {
+  opacity: 1.2;
+}
+
+
+.crea{
+  margin-top: 20px;
+  background-color: rgb(124, 168, 32);
+  color: white;
+}
+
+.trash{
+  background-color: rgb(79, 79, 79);
+  width: 50px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+img{
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5%;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+
+

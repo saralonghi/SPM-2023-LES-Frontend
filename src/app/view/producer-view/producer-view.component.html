@@ -1,0 +1,90 @@
+<app-navbar> </app-navbar>
+<div class="container" style="margin-top:0px; padding-top: 90px;">
+<div class="row">
+  <div class="col-lg-4">
+
+
+    <div class="card mb-4">
+      <div class="card-body text-center">
+        <img [src]="logo" alt="logo" style="width: 150px;" *ngIf="logo">
+        <h5 class="my-3">{{producer.nome}}</h5>
+        <p class="text-muted mb-1"><i class="bi bi-geoalt text-black" ></i>Luogo: {{producer.city}} ({{producer.province}})</p>
+        <p class="text-muted mb-4">Indirizzo: {{producer.address}}</p>
+        <p class="text-muted mb-4">Contatto: {{producer.phone}} </p>
+      </div>
+    </div>
+
+
+    <div class="card mb-4 mb-lg-0">
+      <div class="card-body p-0">
+        <ul class="list-group list-group-flush rounded-3">
+          <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+            <i class="bi bi-globe"></i>
+            <p class="mb-0"><a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" [href]="producer.linkWebsite">{{producer.linkWebsite}}</a></p>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+            <i class="bi bi-instagram bi-lg" style="color: #ac2bac;"></i>
+            <p class="mb-0"><a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" [href]="producer.linkInstagram">{{producer.linkInstagram}}</a></p>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+            <i class="bi bi-facebook bi-lg" style="color: #3b5998;"></i>
+            <p class="mb-0"><a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" [href]="producer.linkFacebook">{{producer.linkFacebook}}</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="col-lg-8">
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Prodotti</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">{{producer.products}}</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <p class="mb-0">Descrizione</p>
+        </div>
+        <div class="row">
+          <div class="col-sm-9">
+            <p class="text-muted mb-0" >{{producer.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<div class="row" style="z-index: 0">
+  <div class="col-sm-12" style="z-index: 0">
+        <div class="card mb-auto" style="z-index: 0">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let photo of list; let i = index" [class.active]="i === 0">
+                <img [src]="photo" class="d-block w-100" alt="photo{{ i + 1 }}">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<app-footer></app-footer>

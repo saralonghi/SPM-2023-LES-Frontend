@@ -1,0 +1,101 @@
+.content {
+  position: fixed;
+  height: 95vh;
+  width: 100vw;
+  padding-top: 80px;
+  overflow: hidden;
+
+}
+
+.fs-2{
+  margin-left: 100px;
+  font-weight: bold;
+  color : black;
+}
+
+
+.container{
+  height: 90vh;
+  width: 100vw;
+  overflow-y: auto;
+
+  padding-top: 20px;
+  padding-bottom: 120px;
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color:whitesmoke;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+/*Card----------------------------------------------*/
+.card-img-top{
+  width: 200px;
+  height: 250px;
+  border: none;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.card-body{
+  overflow:hidden;
+  margin-left: 210px;
+  margin-top: -250px;
+  height: 250px;
+  border: none;
+  border-radius: 6px;
+}
+
+.card-text{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7; /* Numero di righe da mostrare */
+  overflow: hidden;
+}
+
+.card{
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  min-width: 300px;
+  box-shadow: 0 5px 25px rgb(1 1 1 /20%);
+}
+
+
+/*Pagination container ----------------------------------*/
+.pagination-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination /deep/ .ngx-pagination .current {
+  border-radius: 10px;
+  margin: 3px;
+  background: darkseagreen;
+}
+
+.pagination /deep/ .ngx-pagination{
+  border-radius: 10px;
+}
+
+.pagination /deep/ .ngx-pagination .pagination-next:hover{
+  border-radius: 10px;
+}
+
+.pagination /deep/ .ngx-pagination li.pagination-next{
+  border-radius: 10px;
+}
+
+.pagination /deep/ .ngx-pagination a{
+  border-radius: 10px;
+}

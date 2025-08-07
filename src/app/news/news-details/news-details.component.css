@@ -1,0 +1,58 @@
+
+.content {
+  position: fixed;
+  height: 95vh;
+  width: 100vw;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.fs-2{
+  margin-left: 100px;
+  font-weight: bold;
+  color : black;
+}
+
+/*Container-------------------------------------------*/
+.container{
+  height: 90vh;
+  width: 100vw;
+  overflow-y: auto;
+
+  padding-top: 20px;
+  padding-bottom: 120px;
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color:whitesmoke;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/*Image--------------------------------------*/
+.containerImage{
+  float: right; /* Posiziona l'immagine a destra*/
+  margin: 0px 0px 30px 30px;
+}
+
+img{
+  width:350px;
+  height:400px;
+  object-fit: cover;
+}
+
+
+/*Testo--------------------------------------*/
+p {
+  word-wrap: break-word; /* permette la rottura delle parole lunghe */
+  overflow-wrap: break-word; /* gestisce la rottura delle parole */
+  white-space: normal;
+}
+

@@ -1,0 +1,95 @@
+<app-navbar></app-navbar>
+
+<body>
+<div class="main-container d-flex">
+  <!------------------------------------------ SIDE NAV PICCOLA ----------------------------------------------------->
+  <div class="sidebar" id="side_nav2">
+
+    <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
+      <h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2">PNM</span></h1>
+    </div>
+
+    <ul class="list-unstyled px-2">
+      <!------PROFILO--------->
+      <li class="active">
+        <a id="nav-dati" routerLink="{{listDashboardProducer[0].path}}" class="text-decoration-none py-2 px-3 d-block" style="justify-content: center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="-2 -2 20 20">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg>
+        </a>
+      </li>
+      <br>
+      <!----CREA NEWSLETTER---->
+      <li class="active">
+        <a id="nav-newsletter" routerLink="{{listDashboardProducer[1].path}}" class="text-decoration-none px-3 py-2 d-block">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-images" viewBox="-2 -2 20 20">
+            <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+            <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1z"/>
+          </svg>
+        </a>
+      </li>
+      <br>
+      <!--------IMAGES--------->
+      <li class="active">
+        <a id="nav-images" routerLink="{{listDashboardProducer[2].path}}" class="text-decoration-none px-3 py-2 d-block">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope-plus" viewBox="-2 -2 20 20">
+            <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
+            <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 0 0 1 0v-1h1a.5.5 0 0 0 0-1h-1v-1a.5.5 0 0 0-.5-.5"/>
+          </svg>
+        </a>
+      </li>
+      <br>
+      <!------HISTORYCAL--------->
+      <li class="active">
+        <a id="nav-historycalNewsletter" routerLink="{{listDashboardProducer[3].path}}" class="text-decoration-none px-3 py-2 d-block">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-inbox" viewBox="-2 -2 20 20">
+          <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z"/>
+        </svg>
+        </a>
+      </li>
+    </ul>
+
+   <!-- <hr class="h-color mx-2">---> <!---linea-->
+  </div> <!---div class="sidebar" id="side_nav2"--->
+
+
+
+
+
+
+  <!------------------------------------------ SIDE NAV GRANDE----------------------------------------------------->
+  <div class="sidebar" id="side_nav">
+
+    <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
+      <h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2">PNM</span>
+        <div class="text-white" style="padding-top: 15px"> {{producer.nome}} </div></h1>
+      <!---<button class="btn d-md-none d-block close-btn px-1 py-0 text-white">
+        <i class="fal fa-stream"></i>
+      </button>-->
+    </div>
+
+    <ul class="list-unstyled px-2" *ngFor="let item of listDashboardProducer, index as i">
+
+          <li class="active">
+            <a id="{{item.path}}" routerLink="{{item.path}}" class="text-decoration-none px-3 py-2 d-block">
+              <a *ngIf="item.nome =='Storico Newsletter' && listNewsletterProducer.length!=0">
+              <span class="bg-dark rounded-pill text-white py-0 px-2"> {{listNewsletterProducer.length}}</span></a>
+              <i class="fal fa-home"></i> {{item.nome}}
+            </a>
+      </li>
+    </ul>
+    <hr class="h-color mx-2">
+  </div> <!---div class="sidebar" id="side_nav"--->
+
+
+  <!------------------------------ CONTENT ------------------------------------>
+  <div class="content">
+       <router-outlet></router-outlet>
+  </div> <!--div class="content"-->
+
+
+
+</div> <!-- div class="main-container d-flex"-->
+</body>
+

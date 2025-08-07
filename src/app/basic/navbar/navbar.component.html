@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/logoRealPNG.png" alt="Logo" width="150"
+           style="position: relative; margin-left: 10px; margin-right: 10px;" class="d-inline-block align-text-top"></a>
+    <p class="p-testo" style=
+         "font-family: 'Canter-Light', Helvetica, Arial, sans-serif;
+         font-size: 25px;
+         text-shadow: -2px 0px 3px rgba(80,84,80,0.34);
+         margin-right: 20px;
+         margin-bottom: -2px;">
+      Prodotti Nobili Marchigiani
+    </p>
+
+    <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="width: 16px"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="justify-items: center;">
+        <li class="nav-item">
+          <a id="home-link" class="nav-link" routerLinkActive="active" routerLink="/home" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a id="ass-link" class="nav-link" routerLinkActive="active" routerLink="/associazione">L'Associazione</a>
+        </li>
+        <li class="nav-item">
+          <a id="prod-link" class="nav-link" routerLinkActive="active" routerLink="/producers/">Produttori</a>
+        </li>
+        <li class="nav-item">
+          <a id="news-link" class="nav-link" routerLinkActive="active" routerLink="/all-news">News</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-flex justify-content-lg-end" >
+        <li class="nav-item" style="margin-top: 10px;">
+          <button id="btn-register"   *ngIf="!authManager.isLoggedProducer() && !authManager.isLoggedAdmin()" class="btn btn-warning" type="submit" routerLink="/register">Register</button>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;">
+          <button id="btn-login"   *ngIf="!authManager.isLoggedProducer() && !authManager.isLoggedAdmin()" class="btn btn-warning" type="submit" routerLink="/login">Login</button>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;">
+           <button  id="btn-profiloProducer"  *ngIf="authManager.isLoggedProducer() "class="btn btn-warning" type="submit" routerLink="/dashboardProducer">Profilo</button>
+        </li>
+        <li class="nav-item"  style="margin-top: 10px;">
+           <button id="btn-profiloAdmin"   *ngIf="authManager.isLoggedAdmin()    "class="btn btn-warning" type="submit" routerLink="/dashboardAdmin">Profilo</button>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;">
+           <button id="btn-Logout"   *ngIf="authManager.isLoggedProducer() || authManager.isLoggedAdmin()" class="btn btn-warning" type="submit" (click)="authManager.clearAll()" routerLink="/logout">Logout</button>
+        </li>
+      </ul>
+     </div>
+
+  </div>
+</nav>
+
+
+
+<!--<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/logoRealPNG.png" alt="Logo" width="150" style="position: relative; margin-left: -30px; margin-right: 10px;" class="d-inline-block align-text-top"></a>
+    <b class="titolo">Prodotti Nobili Marchigiani</b>
+
+    <div class="collapse navbar-collapse" id="navbar">
+      <div class="navbar-nav">
+        <a class="nav-link" routerLinkActive="active" routerLink="/home" aria-current="page">Home</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/associazione">L'Associazione</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/producers/">Produttori</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/all-news">News</a>
+      </div>
+    </div>
+    <form class="d-flex justify-content-lg-end" role="login">
+
+      <button   *ngIf="!authManager.isLoggedProducer() && !authManager.isLoggedAdmin()" class="btn btn-warning" type="submit" routerLink="/register">Register</button>
+      <button   *ngIf="!authManager.isLoggedProducer() && !authManager.isLoggedAdmin()" class="btn btn-warning" type="submit" routerLink="/login">Login</button>
+
+      <button   *ngIf="authManager.isLoggedProducer() "class="btn btn-warning" type="submit" routerLink="/dashboardProducer">Profilo</button>
+      <button   *ngIf="authManager.isLoggedAdmin()    "class="btn btn-warning" type="submit" routerLink="/dashboardAdmin">Profilo</button>
+
+      <button   *ngIf="authManager.isLoggedProducer() || authManager.isLoggedAdmin()" class="btn btn-warning" type="submit" (click)="authManager.clearAll()" routerLink="/logout">Logout</button>
+    </form>
+  </div>
+</nav>
+-->

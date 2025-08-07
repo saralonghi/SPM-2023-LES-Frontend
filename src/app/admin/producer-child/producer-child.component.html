@@ -1,0 +1,71 @@
+<div class="container">
+
+  <div class="section-container">
+      <div class="row mb-3">
+        <div class="col-12">
+          <h2 id="titleEx3" style="color: black">{{producer.nome}}</h2>
+        </div>
+
+        <br><br>
+
+        <dl class="row">
+          <ng-container *ngIf="producer.nome!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Nome: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.nome }} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.email!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Email: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.email }} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.phone!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Telefono: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.phone}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.address!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Indirizzo: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.address}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.city!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Città: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.city }} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.province!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Provincia: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.province}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.postalCode!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Codice Postale: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.postalCode}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.products!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Prodotti: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.products}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.description!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Descrizione: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.description}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.linkFacebook!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Facebook: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.linkFacebook}} </dd>
+          </ng-container>
+          <ng-container *ngIf="producer.linkInstagram!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Instagram: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.linkInstagram}} </dd>
+          </ng-container>
+          <br>
+          <ng-container *ngIf="producer.linkWebsite!=null">
+            <dt class="col-md-4 col-sm-12 label4"> Sito web: </dt>
+            <dd class="col-md-8 col-sm-12 label8"> {{producer.linkWebsite}} </dd>
+          </ng-container>
+        </dl>
+     </div>
+
+    <div class="d-grid gap-2 d-md-block">
+      <button routerLink="/dashboardAdmin/producer"  (click)="onAccetta()" class="btnAccetta btn" type="button"> Accetta </button>
+      <button routerLink="/dashboardAdmin/producer"(click)="onRifiuta()"class="btnRifiuta btn" type="button"> Rifiuta </button>
+    </div>
+</div>
+</div>
+
+<router-outlet></router-outlet>

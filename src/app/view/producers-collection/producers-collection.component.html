@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+
+<body>
+<div class="container">
+
+  <form #search="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row search-bar" style="margin-top:0px; padding-top: 90px;">
+      <div class="col-md-6 "style="padding:2px;">
+        <input
+          type="text"
+          [(ngModel)]="searchProducer.products"
+          id="products"
+          class="form-control"
+          name="products"
+          placeholder="Inserisci prodotto"
+          #name="ngModel">
+      </div>
+      <div class="col-md-3" style="padding:2px;">
+        <select
+          type="text"
+          [(ngModel)]="searchProducer.province"
+          class="form-select"
+          id="province"
+          name="province"
+          aria-label="Scegli la provincia"
+          required
+          #province="ngModel">
+
+          <option value="" disabled selected> Seleziona..</option>
+          <option>Pesaro Urbino</option>
+          <option>Ancona</option>
+          <option>Macerata</option>
+          <option>Fermo</option>
+          <option>Ascoli Piceno</option>
+        </select>
+
+      </div>
+      <div class="col-md-3" style="padding:2px;">
+        <button class="btn btn-warning" type="submit" [disabled]="!province.touched">Cerca
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let producerDetails of listProducers, index as data">
+      <div class="card h-100">
+        <img [src]="producerDetails.urlPhoto" class="card-img-top" [width]="400" [height]="300" *ngIf="producerDetails.urlPhoto" style="object-fit: cover">
+        <div class="card-body" style="display:grid; align-content: space-between;" >
+          <div class="card-body text-center">
+            <h5 class="my-3">{{producerDetails.nome}}</h5>
+            <p class="text-muted text-start mb-1">Luogo: {{producerDetails.city}} ({{producerDetails.province}})</p>
+            <p class="text-muted text-start mb-1">Indirizzo: {{producerDetails.address}}</p>
+            <p class="text-muted text-start mb-1">Contatto: {{producerDetails.phone}} </p>
+            <p class="text-muted text-start mb-1 ">Email: {{producerDetails.email}} </p>
+          </div>
+
+        <div class="d-flex mb-2 " style="margin-right: 5px;">
+          <button type="button" class="btn btn-outline-warning" routerLink="profile/{{producerDetails.id}}" >Dettagli</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<app-footer></app-footer>

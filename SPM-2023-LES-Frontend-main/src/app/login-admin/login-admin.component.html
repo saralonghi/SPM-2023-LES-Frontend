@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<body class="text-center">
+<main class="form-signin w-100 m-auto">
+  <form (ngSubmit)="onSubmit()" #lf="ngForm">
+    <img class="mb-4" src="assets/img/logo.png" alt="..." height="10%" width="100%" >
+    <h1 class="h3 mb-3 fw-normal">Inserire le credenziali Amministratore</h1>
+
+    <div class="form-floating" >
+
+      <input
+        type="text"
+        [(ngModel)]="loginRequest.email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Inserire email"
+        required
+        #email="ngModel">
+      <label for="email">Email </label>
+    </div>
+    <p></p>
+    <div class="form-floating">
+      <input
+        type="password"
+        [(ngModel)]="insertPassword"
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="Enter your email address"
+        #password="ngModel">
+      <label for="password">Password</label>
+    </div>
+    <p></p>
+    <div class="checkbox mb-3">
+      <label>
+        <p><a routerLink="/login" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Accedi come Produttore</a></p>
+      </label>
+
+    </div>
+    <button class="w-100 btn btn-lg btn-warning" type="submit" >Accedi</button>
+  </form>
+</main>
+<div class="modal" [ngClass]="{'active': showAlert}">
+  <div class="modal-content">
+    <span class="close" (click)="hideAlert()">&times;</span>
+    <p>{{ alertMessage }}</p>
+  </div>
+</div>
+</body>
+<app-footer></app-footer>

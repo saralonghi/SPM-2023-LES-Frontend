@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<div class="content">
+  <h2 class="fs-2"> Guarda le News</h2>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
+
+  <div class = "container">
+    <div class="row">
+      <ng-container *ngFor="let newsItem of listNews | paginate : {itemsPerPage: 6 , currentPage: this.p}; index as i ">
+        <ng-template [ngIf]="i%3 == 0">
+          <div class="col-12"  routerLink="news/{{newsItem.id}}">
+            <div class="card" style="background-color: rgb(246,219,130);">
+              <img class="card-img-top"  [src]="newsItem.urlPhoto">
+              <div class="card-body" style="background-color:  rgba(248,241,221,0.62)">
+                <p class="card-text">
+                  <strong style="font-size: large"> {{newsItem.titolo}} </strong> <br> <br> {{newsItem.contenuto}} </p>
+                <p style="display: flex; justify-content: right">{{newsItem.created.toString().replace('T', ',  ').substring(0, 17)}}</p>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template [ngIf]="i%3 != 0">
+      <div class="col-md-6 col-sm-12" routerLink="news/{{newsItem.id}}">
+        <div class="card" style="background-color: #d3e1d3;">
+          <img class="card-img-top"  [src]="newsItem.urlPhoto">
+          <div class="card-body"  style=" background-color: #edf1ec;">
+
+            <p class="card-text" >
+              <strong style="font-size: large"> {{newsItem.titolo}} </strong> <br><br> {{newsItem.contenuto}} </p>
+            <p style=" display: flex; justify-content: right">{{newsItem.created.toString().replace('T', ',  ').substring(0, 17)}}</p>
+
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+  </ng-container>
+  </div>
+
+    <ng-container *ngIf="listNews.length>6">
+      <div class="pagination-container">
+        <pagination-controls class="pagination" (pageChange)= " p=$event "> </pagination-controls>
+      </div>
+    </ng-container>
+  </div> <!----Container-->
+</div> <!------Content-->
+
+<script type ="text/javascript"> </script>

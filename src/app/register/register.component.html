@@ -1,0 +1,179 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <main>
+    <div class="py-5 text-center ">
+      <img class="d-block mx-auto mb-4" src="assets/img/logo1.svg" alt="" width="290" height="100">
+      <h2>Entra a far parte dell'associazione</h2>
+      <p class="lead" style="padding: 3%">La buona alimentazione, la convivialità, la salute e la tutela del patrimonio agroalimentare marchigiano
+        sono da oltre vent'anni tra i nostri principali obiettivi</p>
+    </div>
+    <div class="col-md-auto center">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="row g-2" id="produttore" ngModelGroup="produttore">
+          <div class="row g-2">
+            <div class="col-6">
+              <label for="name" class="form-label">Nome Produttore</label>
+              <input type="text"
+                     [(ngModel)]="producer.nome"
+                     class="form-control"
+                     id="name"
+                     name="name"
+                     placeholder="Nome Produttore"
+                     required
+                     #name="ngModel">
+              <span class="help-block" *ngIf="!name.valid && name.touched">Inserire Nome Produttore</span>
+            </div>
+            <div class="col-6">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="text"
+                [(ngModel)]="producer.email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Indirizzo e-mail"
+                required
+                #email="ngModel">
+              <span class="help-block" *ngIf="!email.valid && email.touched">Inserire email</span>
+            </div>
+          </div>
+
+          <div class="row g-2">
+            <div class="col-6">
+              <label for="fiscalid" class="form-label">Identificativo Fiscale</label>
+              <input
+                type="text"
+                [(ngModel)]="producer.fiscalid"
+                class="form-control"
+                id="fiscalid"
+                name="fiscalid"
+                placeholder="Identificativo Fiscale"
+                required
+                #fiscalid="ngModel">
+              <span class="help-block" *ngIf="!fiscalid.valid && fiscalid.touched">Inserisci Azienda</span>
+            </div>
+
+            <div class="col-6">
+              <label for="phone" class="form-label">Telefono Produttore</label>
+              <input
+                type="text"
+                [(ngModel)]="producer.phone"
+                class="form-control"
+                id="phone"
+                name="phone"
+                placeholder="Numero di telefono"
+                required
+                #phone="ngModel">
+              <span class="help-block" *ngIf="!phone.valid && phone.touched">Inserire telefono</span>
+            </div>
+          </div>
+
+          <div class="row g-2">
+            <div class="col-12">
+              <label for="address" class="form-label">Indirizzo del Produttore</label>
+              <input
+                type="text"
+                [(ngModel)]="producer.address"
+                class="form-control"
+                id="address"
+                name="address"
+                placeholder="Indirizzo Produttore"
+                required
+                #address="ngModel">
+              <span class="help-block" *ngIf="!address.valid && address.touched">Per la registrazione abbiamo bisogno dell'indirizzo</span>
+            </div>
+          </div>
+
+          <div class="row g-2">
+            <div class="col-md-4">
+              <label for="city" class="form-label">Comune</label>
+              <input
+                type="text"
+                [(ngModel)]="producer.city"
+                class="form-control"
+                id="city"
+                name="city"
+                placeholder="Comune"
+                required
+                #city="ngModel">
+              <span class="help-block" *ngIf="!city.valid && city.touched">Per la registrazione abbiamo bisogno del comune</span>
+            </div>
+            <div class="col-md-5">
+              <label for="province" class="form-label">Provincia</label>
+              <select
+                type="text"
+                [(ngModel)]="producer.province"
+                class="form-select"
+                id="province"
+                name="province"
+                required
+                #province="ngModel">
+                <option value="">Seleziona...</option>
+                <option>Pesaro Urbino</option>
+                <option>Ancona</option>
+                <option>Macerata</option>
+                <option>Fermo</option>
+                <option>Ascoli Piceno</option>
+              </select>
+              <span class="help-block" *ngIf="!province.valid && province.touched">Inserisci la provincia</span>
+            </div>
+            <div class="col-md-3">
+              <label for="postalCode" class="form-label">CAP</label>
+              <input
+                type="text"
+                [(ngModel)]="producer.postalCode"
+                class="form-control"
+                id="postalCode"
+                name="postalCode"
+                placeholder="CAP"
+                required
+                #postalCode="ngModel">
+
+              <span class="help-block" *ngIf="!postalCode.valid && postalCode.touched">Per la registrazione abbiamo bisogno del CAP</span>
+            </div>
+          </div>
+
+          <div class="row g-2">
+            <div class="col-6">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                [(ngModel)]="insertPassword"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Password"
+                #password="ngModel">
+              <span class="help-block" *ngIf="!password.valid && password.touched">Inserire password</span>
+            </div>
+            <div class="col-6">
+              <label for="confpassword" class="form-label">Conferma Password</label>
+              <input
+                type="password"
+                id="confpassword"
+                [(ngModel)]="confPassword"
+                class="form-control"
+                required
+                name="confpassword"
+                placeholder="Conferma Password"
+                #confpassword="ngModel">
+              <span class="help-block" *ngIf="!confpassword.valid && confpassword.touched">Inserire password</span>
+            </div>
+
+          </div>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn btn-warning btn-lg" [disabled]="!userForm.form.valid" type="submit" >Registrati</button>
+      </form>
+    </div>
+  </main>
+  <div class="modal" [ngClass]="{'active': showAlert}">
+    <div class="modal-content">
+      <span class="close" (click)="hideAlert()">&times;</span>
+      <p>{{ alertMessage }}</p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+

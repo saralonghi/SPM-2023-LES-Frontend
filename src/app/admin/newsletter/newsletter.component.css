@@ -1,0 +1,67 @@
+.fs-4{
+  margin-left: 10px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color : black;
+}
+
+
+/*Container----------------------------------*/
+.container{
+  height: 80vh;
+  padding-bottom: 100px;
+  overflow-y: auto;
+  padding-right: 50px;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.limited-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* Aggiunge tre punti alla fine del testo se viene troncato */
+  max-width: 30vw; /* Specifica la larghezza massima in pixel o un'altra unità di misura */
+}
+
+ul:hover {
+  background-color: rgba(186, 232, 185, 0.34);
+  border: none;
+}
+
+/*Pagination container ----------------------------------*/
+.pagination-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination /deep/ .ngx-pagination .current {
+  border-radius: 10px;
+  margin: 3px;
+  background: darkseagreen;
+}
+
+.pagination /deep/ .ngx-pagination{
+  border-radius: 10px;
+}
+
+.pagination /deep/ .ngx-pagination .pagination-next:hover{
+  border-radius: 10px;
+}
+
+.pagination /deep/ .ngx-pagination li.pagination-next{
+  border-radius: 10px;
+}
+
+.pagination /deep/ .ngx-pagination a{
+  border-radius: 10px;
+}

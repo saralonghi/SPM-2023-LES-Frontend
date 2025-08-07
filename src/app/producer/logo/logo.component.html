@@ -1,0 +1,19 @@
+<div class = "container">
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutAlign.xs="center center">
+    <div fxFlex="50%" fxFlex.xs="100%">
+
+      <h4 class="fs-2"> Il tuo logo </h4>
+
+      <br>
+      <div *ngIf="!imgURL; then defaultImg else newImg"></div>
+      <ng-template #defaultImg> <img src="/assets/img/0.png" > </ng-template>
+      <ng-template #newImg> <img  [src]="imgURL"></ng-template>
+    </div>
+
+    <br>
+      <div class="form">
+        <input (change)="onFileChanged($event)" class="form-control form-file-button-hover-bg" multiple type="file">
+        <button routerLink="/dashboardProducer" type="submit" (click)="onUpload()" class="btn crea"><strong>Crea</strong></button>
+      </div>
+    </div>
+  </div>

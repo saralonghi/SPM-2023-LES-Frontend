@@ -1,0 +1,49 @@
+name: Build 
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]  
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]   
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Application
+        run: npm run build  
+          
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: l3ocurz1/spm-2023-les-frontend-silver
+          tags: silver, latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+          

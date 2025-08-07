@@ -1,0 +1,53 @@
+.navbar{
+  align-content: end;
+  position: fixed;
+  width: 100vw;
+  min-height: 65px;
+  color : black;
+  z-index: 9;
+}
+
+
+
+.nav-link{
+  color: black;
+}
+
+.active {
+  font-weight: bold;
+  color : black;
+}
+
+.nav-link.active{
+  color: black;
+}
+
+.btn-warning {
+  margin-right:20px;
+  border: none;
+  color : black;
+  opacity: 1;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+
+@media screen and (max-width: 470px) {
+  .p-testo {
+    display: none;
+  }
+}
+
+
+
+/*Font---------------------------*/
+@font-face {
+  font-family: Canter-Light;
+src: url('../../../assets/font/Canter-Light.eot');
+  src: url('../../../assets/font/Canter-Light.eot?#iefix') format('embedded-opentype'),
+  url('../../../assets/font/Canter-Light.woff2') format('woff2'),
+  url('../../../assets/font/Canter-Light.woff') format('woff'),
+  url('../../../assets/font/Canter-Light.ttf') format('truetype');
+}
